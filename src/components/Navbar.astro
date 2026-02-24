@@ -1,0 +1,76 @@
+---
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
+  <div class="container mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-1">
+      <span class="text-lg font-mono font-bold text-foreground">open</span>
+      <span class="text-lg font-mono font-bold text-gradient-primary">car</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-6 text-sm font-mono text-muted-foreground">
+      <a href="#about" class="hover:text-primary transition-colors">About</a>
+      <a href="#standards" class="hover:text-primary transition-colors">Standards</a>
+      <a href="#process" class="hover:text-primary transition-colors">Join</a>
+      <a href="#partners" class="hover:text-primary transition-colors">Partners</a>
+      <a
+        href="https://github.com/opencar-dev"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="px-4 py-1.5 rounded-md border border-border hover:border-primary/50 hover:text-primary transition-all"
+      >
+        GitHub
+      </a>
+    </nav>
+
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden text-foreground"
+      aria-label="Toggle menu"
+    >
+      <svg id="icon-menu" class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="4" x2="20" y1="12" y2="12" />
+        <line x1="4" x2="20" y1="6" y2="6" />
+        <line x1="4" x2="20" y1="18" y2="18" />
+      </svg>
+      <svg id="icon-close" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 6 6 18" />
+        <path d="m6 6 12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-background/95 backdrop-blur-xl">
+    <nav class="container mx-auto px-6 py-4 flex flex-col gap-3 text-sm font-mono text-muted-foreground">
+      <a href="#about" class="hover:text-primary transition-colors py-1 mobile-nav-link">About</a>
+      <a href="#standards" class="hover:text-primary transition-colors py-1 mobile-nav-link">Standards</a>
+      <a href="#process" class="hover:text-primary transition-colors py-1 mobile-nav-link">Join</a>
+      <a href="#partners" class="hover:text-primary transition-colors py-1 mobile-nav-link">Partners</a>
+      <a href="https://github.com/opencar-dev" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors py-1">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("mobile-menu-btn")!;
+  const menu = document.getElementById("mobile-menu")!;
+  const iconMenu = document.getElementById("icon-menu")!;
+  const iconClose = document.getElementById("icon-close")!;
+
+  btn.addEventListener("click", () => {
+    const isOpen = !menu.classList.contains("hidden");
+    menu.classList.toggle("hidden");
+    iconMenu.classList.toggle("hidden");
+    iconClose.classList.toggle("hidden");
+    btn.setAttribute("aria-expanded", String(!isOpen));
+  });
+
+  document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      menu.classList.add("hidden");
+      iconMenu.classList.remove("hidden");
+      iconClose.classList.add("hidden");
+      btn.setAttribute("aria-expanded", "false");
+    });
+  });
+</script>

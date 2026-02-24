@@ -1,0 +1,35 @@
+---
+import "@/index.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "OpenCar.dev – The Open Standard for the Global Automotive Ecosystem",
+  description = "OpenCar provides the common language that allows websites, apps, and hardware to talk to one another. Non-discriminatory, open standards for automotive culture.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="OpenCar" />
+
+    <meta property="og:title" content="OpenCar.dev – Open Standard for the Automotive Ecosystem" />
+    <meta property="og:description" content="The common language for automotive platforms. Open standards for events, data, and innovation." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://OpenCar.dev" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="OpenCar.dev – Open Standard for the Automotive Ecosystem" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

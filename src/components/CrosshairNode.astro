@@ -1,0 +1,17 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+---
+
+<span class:list={["absolute w-2 h-2", className]}>
+  <span class="absolute inset-0 flex items-center justify-center">
+    <span class="w-px h-full bg-primary/20"></span>
+  </span>
+  <span class="absolute inset-0 flex items-center justify-center">
+    <span class="h-px w-full bg-primary/20"></span>
+  </span>
+  <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1 h-1 rounded-full bg-primary/30"></span>
+</span>

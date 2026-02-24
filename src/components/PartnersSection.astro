@@ -1,0 +1,58 @@
+---
+import { ExternalLink } from "@lucide/astro";
+import BlueprintCorners from "./BlueprintCorners.astro";
+import DimensionLabel from "./DimensionLabel.astro";
+import BlueprintDivider from "./BlueprintDivider.astro";
+
+const partners = [
+  {
+    name: "AtlaBuild",
+    url: "https://atlabuild.com",
+    description: "The world's largest crowdsourced customized vehicle and powersports platform designed for discovering, following, sharing, and connecting with other enthusiasts.",
+  },
+  {
+    name: "FuelEmpire",
+    url: "https://fuelempire.app",
+    description: "An automotive community network dedicated to connecting car enthusiasts for sharing experiences, resources, builds, and knowledge across all makes and models.",
+  },
+];
+---
+
+<section id="partners" class="py-24 relative">
+  <div class="container mx-auto px-6">
+    <BlueprintDivider class="mb-16" />
+    <div class="text-center mb-16">
+      <DimensionLabel class="mb-4 justify-center">Section 03</DimensionLabel>
+      <span class="text-xs font-mono uppercase tracking-widest text-primary mb-3 block">Ecosystem</span>
+      <h2 class="text-3xl md:text-4xl font-mono font-bold text-foreground mb-4">
+        Partner Applications
+      </h2>
+      <p class="max-w-xl mx-auto text-muted-foreground">
+        Organizations building on opencar standards.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+      {partners.map((partner) => (
+        <a
+          href={partner.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group relative p-6 rounded-xl border border-border bg-card hover:border-primary/30 transition-all duration-300 flex flex-col"
+        >
+          <BlueprintCorners />
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-lg font-mono font-bold text-foreground group-hover:text-primary transition-colors">
+              {partner.name}
+            </h3>
+            <ExternalLink class="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+          </div>
+          <p class="text-sm text-muted-foreground mb-4">{partner.description}</p>
+          <span class="mt-auto text-xs font-mono text-muted-foreground group-hover:text-primary transition-colors">
+            {partner.url.replace("https://", "")}
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
