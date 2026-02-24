@@ -3,12 +3,22 @@ import { BlueprintCorners, DimensionLabel, CrosshairNode } from "./BlueprintElem
 
 const standards = [
   {
-    name: "Events",
-    version: "Active",
+    name: "OC-EVENT",
+    version: "1.0",
     description:
-      "A standardized event specification for connected automotive applications. Defines how automotive platforms publish, subscribe to, and handle real-time events across systems.",
-    tags: ["Real-time", "Pub/Sub", "Interoperability"],
-    githubUrl: "https://github.com/opencar-dev/events",
+      "The universal schema for automotive gatherings. Accounts for surface types (on-road/off-road), venue categories (business/parking lot), and event dynamics (static/rally).",
+    tags: ["Events", "Discoverability", "Schema"],
+    specsUrl: "https://github.com/opencar-dev/opencar-specs/tree/main/specs",
+    githubUrl: "https://github.com/opencar-dev/opencar-specs",
+  },
+  {
+    name: "OC-DATA",
+    version: "Coming Soon",
+    description:
+      "Standards for aftermarket part interoperability and vehicle profiles. Enables universal exchange of parts, services, and vehicle data.",
+    tags: ["Parts", "Vehicle Profiles", "Commerce"],
+    specsUrl: null,
+    githubUrl: "https://github.com/opencar-dev/opencar-specs",
   },
 ];
 
@@ -49,16 +59,30 @@ const StandardsSection = () => {
                     <span className="text-xs font-mono text-primary">{standard.version}</span>
                   </div>
                 </div>
-                <a
-                  href={standard.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-border text-xs font-mono text-muted-foreground hover:text-primary hover:border-primary/30 transition-colors"
-                >
-                  <GitBranch className="w-3.5 h-3.5" />
-                  GitHub
-                  <ExternalLink className="w-3 h-3" />
-                </a>
+                <div className="flex items-center gap-2">
+                  {standard.specsUrl && (
+                    <a
+                      href={standard.specsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-border text-xs font-mono text-muted-foreground hover:text-primary hover:border-primary/30 transition-colors"
+                    >
+                      <FileCode className="w-3.5 h-3.5" />
+                      Spec
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  )}
+                  <a
+                    href={standard.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-border text-xs font-mono text-muted-foreground hover:text-primary hover:border-primary/30 transition-colors"
+                  >
+                    <GitBranch className="w-3.5 h-3.5" />
+                    GitHub
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                </div>
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed mb-4">{standard.description}</p>
               <div className="flex flex-wrap gap-2">

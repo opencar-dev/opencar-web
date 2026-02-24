@@ -15,6 +15,7 @@ const Navbar = () => {
         <nav className="hidden md:flex items-center gap-6 text-sm font-mono text-muted-foreground">
           <a href="#about" className="hover:text-primary transition-colors">About</a>
           <a href="#standards" className="hover:text-primary transition-colors">Standards</a>
+          <a href="#process" className="hover:text-primary transition-colors">Join</a>
           <a href="#partners" className="hover:text-primary transition-colors">Partners</a>
           <a
             href="https://github.com/opencar-dev"
@@ -40,6 +41,7 @@ const Navbar = () => {
           <nav className="container mx-auto px-6 py-4 flex flex-col gap-3 text-sm font-mono text-muted-foreground">
             <a href="#about" onClick={() => setOpen(false)} className="hover:text-primary transition-colors py-1">About</a>
             <a href="#standards" onClick={() => setOpen(false)} className="hover:text-primary transition-colors py-1">Standards</a>
+            <a href="#process" onClick={() => setOpen(false)} className="hover:text-primary transition-colors py-1">Join</a>
             <a href="#partners" onClick={() => setOpen(false)} className="hover:text-primary transition-colors py-1">Partners</a>
             <a href="https://github.com/opencar-dev" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors py-1">GitHub</a>
           </nav>

@@ -24,7 +24,7 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 mb-8 animate-slide-up">
           <span className="w-2 h-2 rounded-full bg-primary animate-pulse-glow" />
-          <span className="text-sm font-mono text-primary">Standards for Connected Automotive</span>
+          <span className="text-sm font-mono text-primary">The Open Standard for the Global Automotive Ecosystem</span>
         </div>
 
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-mono font-extrabold tracking-tight mb-6 animate-slide-up" style={{ animationDelay: "0.1s" }}>
@@ -33,8 +33,8 @@ const HeroSection = () => {
         </h1>
 
         <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground font-sans leading-relaxed mb-10 animate-slide-up" style={{ animationDelay: "0.2s" }}>
-          Developing open standards for connected automotive technologies.
-          Building the protocols that power the next generation of automotive experiences.
+          The common language that allows websites, apps, and hardware to talk to one another.
+          Ensuring automotive culture—in all its forms—thrives in a connected world.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up" style={{ animationDelay: "0.3s" }}>

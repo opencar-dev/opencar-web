@@ -1,35 +1,33 @@
+import { FileText, Code, GitMerge } from "lucide-react";
 import { BlueprintCorners, DimensionLabel, BlueprintDivider } from "./BlueprintElements";
 
-const stages = [
+const governance = {
+  title: "Governance & Neutrality",
+  description:
+    "OpenCar is governed by its members—the people who own and build the automotive web. We follow a consensus-based process modeled after international standards (ISO) so no single entity controls the format. We are not married to any single segment of the industry. Our goal is to build the \"pipes\" that allow the entire industry to flow more efficiently.",
+};
+
+const steps = [
   {
-    code: "NP",
-    name: "Proposal Stage",
-    description: "A New Work Item Proposal is submitted to a technical committee to confirm the market need.",
+    num: "1",
+    icon: FileText,
+    title: "Read the Spec",
+    description: "Check out the specs directory for OC-EVENT 1.0.",
+    href: "https://github.com/opencar-dev/opencar-specs/tree/main/specs",
   },
   {
-    code: "WD",
-    name: "Preparatory Stage",
-    description: "A working group of experts prepares a Working Draft.",
+    num: "2",
+    icon: Code,
+    title: "Implement",
+    description: "Add OpenCar compatibility to your platform.",
+    href: "#standards",
   },
   {
-    code: "CD",
-    name: "Committee Stage",
-    description: "The draft is shared for comments until a consensus is reached.",
-  },
-  {
-    code: "DIS",
-    name: "Enquiry Stage",
-    description: "The Draft International Standard is submitted for a vote/public comment.",
-  },
-  {
-    code: "FDIS",
-    name: "Approval Stage",
-    description: "The Final Draft is submitted for a formal vote.",
-  },
-  {
-    code: "ISO",
-    name: "Publication Stage",
-    description: "The final standard is released.",
+    num: "3",
+    icon: GitMerge,
+    title: "Contribute",
+    description: "Suggest changes or new standards via the RFC process.",
+    href: "https://github.com/opencar-dev/opencar-specs",
   },
 ];
 
@@ -40,39 +38,40 @@ const ProcessSection = () => {
         <BlueprintDivider className="mb-16" />
         <div className="text-center mb-16">
           <DimensionLabel className="mb-4 justify-center">Section 04</DimensionLabel>
-          <span className="text-xs font-mono uppercase tracking-widest text-primary mb-3 block">Our Process</span>
+          <span className="text-xs font-mono uppercase tracking-widest text-primary mb-3 block">Get Involved</span>
           <h2 className="text-3xl md:text-4xl font-mono font-bold text-foreground mb-4">
-            ISO Development Process
+            {governance.title}
           </h2>
-          <p className="max-w-xl mx-auto text-muted-foreground">
-            opencar follows the ISO consensus framework — a six-stage lifecycle ensuring every standard is technically sound and widely accepted.
+          <p className="max-w-2xl mx-auto text-muted-foreground">
+            {governance.description}
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto relative">
-          {/* Vertical connector line */}
-          <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-primary/10" />
+        <div className="text-center mb-12">
+          <h3 className="text-2xl font-mono font-bold text-foreground mb-4">
+            Join the Movement
+          </h3>
+          <p className="text-muted-foreground text-sm mb-8">
+            We are looking for website owners, app developers, and industry leaders to help shape these standards.
+          </p>
+        </div>
 
-          <div className="space-y-6">
-            {stages.map((stage, i) => (
-              <div key={stage.code} className="relative flex gap-4 md:gap-6 items-start group">
-                {/* Node on the line */}
-                <div className="relative z-10 flex-shrink-0 w-12 md:w-16 h-12 md:h-16 rounded-lg border border-border bg-card flex items-center justify-center group-hover:border-primary/40 transition-colors">
-                  <span className="text-xs md:text-sm font-mono font-bold text-primary">{stage.code}</span>
-                </div>
-
-                {/* Content card */}
-                <div className="relative flex-1 p-4 md:p-5 rounded-xl border border-border bg-card group-hover:border-primary/30 transition-all duration-300">
-                  <BlueprintCorners />
-                  <div className="flex items-baseline gap-2 mb-1">
-                    <span className="text-[10px] font-mono text-primary/40">{String(i + 1).padStart(2, "0")}</span>
-                    <h3 className="text-sm md:text-base font-mono font-semibold text-foreground">{stage.name}</h3>
-                  </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{stage.description}</p>
-                </div>
+        <div className="max-w-3xl mx-auto grid gap-6 md:grid-cols-3">
+          {steps.map((step) => (
+            <a
+              key={step.num}
+              href={step.href}
+              className="group relative p-6 rounded-xl border border-border bg-card hover:border-primary/30 transition-all duration-300 flex flex-col"
+            >
+              <BlueprintCorners />
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:shadow-[var(--glow-primary)] transition-shadow">
+                <step.icon className="w-5 h-5 text-primary" />
               </div>
-            ))}
-          </div>
+              <span className="text-xs font-mono text-primary mb-1">{step.num}</span>
+              <h4 className="font-mono font-semibold text-foreground mb-2">{step.title}</h4>
+              <p className="text-sm text-muted-foreground flex-1">{step.description}</p>
+            </a>
+          ))}
         </div>
       </div>
     </section>

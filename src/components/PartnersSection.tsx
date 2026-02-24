@@ -1,16 +1,22 @@
 import { ExternalLink } from "lucide-react";
-import { BlueprintCorners, DimensionLabel, BlueprintDivider } from "./BlueprintElements";
+import {
+  BlueprintCorners,
+  DimensionLabel,
+  BlueprintDivider,
+} from "./BlueprintElements";
 
 const partners = [
   {
-    name: "FuelEmpire",
-    url: "https://fuelempire.app",
-    description: "Automotive fuel tracking and analytics platform.",
+    name: "AtlaBuild",
+    url: "https://atlabuild.com",
+    description:
+      "The world's largest crowdsourced customized vehicle and powersports platform designed for discovering, following, sharing, and connecting with other enthusiasts.",
   },
   {
-    name: "ATLA Build",
-    url: "https://atlabuild.com",
-    description: "Connected automotive application development.",
+    name: "FuelEmpire",
+    url: "https://fuelempire.app",
+    description:
+      "An automotive community network dedicated to connecting car enthusiasts for sharing experiences, resources, builds, and knowledge across all makes and models.",
   },
 ];
 
@@ -20,8 +26,12 @@ const PartnersSection = () => {
       <div className="container mx-auto px-6">
         <BlueprintDivider className="mb-16" />
         <div className="text-center mb-16">
-          <DimensionLabel className="mb-4 justify-center">Section 03</DimensionLabel>
-          <span className="text-xs font-mono uppercase tracking-widest text-primary mb-3 block">Ecosystem</span>
+          <DimensionLabel className="mb-4 justify-center">
+            Section 03
+          </DimensionLabel>
+          <span className="text-xs font-mono uppercase tracking-widest text-primary mb-3 block">
+            Ecosystem
+          </span>
           <h2 className="text-3xl md:text-4xl font-mono font-bold text-foreground mb-4">
             Partner Applications
           </h2>
@@ -46,7 +56,9 @@ const PartnersSection = () => {
                 </h3>
                 <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
               </div>
-              <p className="text-sm text-muted-foreground mb-4">{partner.description}</p>
+              <p className="text-sm text-muted-foreground mb-4">
+                {partner.description}
+              </p>
               <span className="mt-auto text-xs font-mono text-muted-foreground group-hover:text-primary transition-colors">
                 {partner.url.replace("https://", "")}
               </span>
