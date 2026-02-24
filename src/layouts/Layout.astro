@@ -4,11 +4,19 @@ import "@/index.css";
 interface Props {
   title?: string;
   description?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogUrl?: string;
 }
+
+const canonicalUrl = "https://opencar.dev";
 
 const {
   title = "OpenCar.dev – The Open Standard for the Global Automotive Ecosystem",
-  description = "OpenCar provides the common language that allows websites, apps, and hardware to talk to one another. Non-discriminatory, open standards for automotive culture.",
+  description = "OpenCar is a non-discriminatory, open-standards collective providing the common language that allows automotive websites, apps, and hardware to talk to one another.",
+  ogTitle = "OpenCar.dev – The Open Standard for the Global Automotive Ecosystem",
+  ogDescription = "The common language for automotive platforms. Open standards for events, vehicle data, and innovation.",
+  ogUrl = canonicalUrl,
 } = Astro.props;
 ---
 
@@ -17,17 +25,27 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="OpenCar" />
+    <link rel="canonical" href={ogUrl} />
 
-    <meta property="og:title" content="OpenCar.dev – Open Standard for the Automotive Ecosystem" />
-    <meta property="og:description" content="The common language for automotive platforms. Open standards for events, data, and innovation." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://OpenCar.dev" />
+    <meta property="og:url" content={ogUrl} />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:site_name" content="OpenCar.dev" />
+    <meta property="og:image" content="https://opencar.dev/preview.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="OpenCar.dev – Open Standard for the Automotive Ecosystem" />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={ogDescription} />
+    <meta name="twitter:image" content="https://opencar.dev/preview.png" />
+
+    <meta name="theme-color" content="#0d1117" />
   </head>
   <body>
     <slot />
