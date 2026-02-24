@@ -12,8 +12,8 @@ const steps = [
     num: "1",
     icon: FileText,
     title: "Read the Spec",
-    description: "Check out the specs directory for OC-EVENT 1.0.",
-    href: "https://github.com/opencar-dev/opencar-specs/tree/main/specs",
+    description: "Check out the specifications directory for OC-EVENT 1.0.",
+    href: "https://github.com/opencar-dev/opencar-specs/blob/main/specifications/OC-EVENT.md",
   },
   {
     num: "2",

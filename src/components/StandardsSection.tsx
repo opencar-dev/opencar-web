@@ -8,7 +8,7 @@ const standards = [
     description:
       "The universal schema for automotive gatherings. Accounts for surface types (on-road/off-road), venue categories (business/parking lot), and event dynamics (static/rally).",
     tags: ["Events", "Discoverability", "Schema"],
-    specsUrl: "https://github.com/opencar-dev/opencar-specs/tree/main/specs",
+    specsUrl: "https://github.com/opencar-dev/opencar-specs/blob/main/specifications/OC-EVENT.md",
     githubUrl: "https://github.com/opencar-dev/opencar-specs",
   },
   {
