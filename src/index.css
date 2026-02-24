@@ -81,9 +81,26 @@
 
   .grid-bg {
     background-image:
+      linear-gradient(hsl(185 80% 50% / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(185 80% 50% / 0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .grid-bg-subtle {
+    background-image:
+      linear-gradient(hsl(185 80% 50% / 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(185 80% 50% / 0.035) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .blueprint-bg {
+    background-color: hsl(var(--background));
+    background-image:
+      linear-gradient(hsl(185 80% 50% / 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(185 80% 50% / 0.07) 1px, transparent 1px),
       linear-gradient(hsl(185 80% 50% / 0.03) 1px, transparent 1px),
       linear-gradient(90deg, hsl(185 80% 50% / 0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
+    background-size: 200px 200px, 200px 200px, 40px 40px, 40px 40px;
   }
 
   .scanline {
@@ -91,8 +108,8 @@
       0deg,
       transparent,
       transparent 2px,
-      hsl(185 80% 50% / 0.015) 2px,
-      hsl(185 80% 50% / 0.015) 4px
+      hsl(185 80% 50% / 0.012) 2px,
+      hsl(185 80% 50% / 0.012) 4px
     );
   }
 }

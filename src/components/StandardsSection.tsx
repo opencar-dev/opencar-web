@@ -13,7 +13,7 @@ const standards = [
 
 const StandardsSection = () => {
   return (
-    <section id="standards" className="py-24 relative grid-bg">
+    <section id="standards" className="py-24 relative">
       <div className="absolute inset-0 scanline pointer-events-none" />
       <div className="relative z-10 container mx-auto px-6">
         <div className="text-center mb-16">
