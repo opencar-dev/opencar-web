@@ -3,14 +3,19 @@ import { FileText, Code, GitMerge } from "@lucide/astro";
 import BlueprintCorners from "./BlueprintCorners.astro";
 import DimensionLabel from "./DimensionLabel.astro";
 import BlueprintDivider from "./BlueprintDivider.astro";
+import { fetchSpecs } from "../lib/specs";
+
+const specs = await fetchSpecs();
+const specsDirectoryUrl = "https://github.com/opencar-dev/opencar-specs/tree/main/specifications";
+const specsSummary = specs.map((s) => `${s.name} ${s.version}`).join(", ");
 
 const steps = [
   {
     num: "1",
     icon: "filetext",
     title: "Read the Spec",
-    description: "Check out the specifications directory for OC-EVENT 1.0.",
-    href: "https://github.com/opencar-dev/opencar-specs/blob/main/specifications/OC-EVENT.md",
+    description: `Check out the specifications directory for ${specsSummary || "our open standards"}.`,
+    href: specs.length === 1 ? specs[0].specsUrl : specsDirectoryUrl,
   },
   {
     num: "2",
@@ -29,7 +34,7 @@ const steps = [
 ];
 ---
 
-<section id="process" class="pt-6 pb-6 relative">
+<section id="process" class="py-[100px] relative">
   <div class="container mx-auto px-6">
     <BlueprintDivider class="mb-8" />
     <div class="text-center mb-8">

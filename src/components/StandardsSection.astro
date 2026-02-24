@@ -3,20 +3,12 @@ import { ExternalLink, GitBranch, FileCode } from "@lucide/astro";
 import BlueprintCorners from "./BlueprintCorners.astro";
 import DimensionLabel from "./DimensionLabel.astro";
 import CrosshairNode from "./CrosshairNode.astro";
+import { fetchSpecs } from "../lib/specs";
 
-const standards = [
-  {
-    name: "OC-EVENT",
-    version: "1.0",
-    description: "The universal schema for automotive gatherings. Accounts for surface types (on-road/off-road), venue categories (business/parking lot), and event dynamics (static/rally).",
-    tags: ["Events", "Discoverability", "Schema"],
-    specsUrl: "https://github.com/opencar-dev/opencar-specs/blob/main/specifications/OC-EVENT.md",
-    githubUrl: "https://github.com/opencar-dev/opencar-specs",
-  },
-];
+const standards = await fetchSpecs();
 ---
 
-<section id="standards" class="pt-6 pb-6 relative">
+<section id="standards" class="py-[100px] relative">
   <div class="absolute inset-0 scanline pointer-events-none"></div>
   <div class="relative z-10 container mx-auto px-6">
     <div class="text-center mb-8">
