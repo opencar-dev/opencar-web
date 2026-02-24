@@ -1,4 +1,5 @@
 import { Code, Globe, Shield } from "lucide-react";
+import { BlueprintCorners, CrosshairNode, DimensionLabel, BlueprintDivider } from "./BlueprintElements";
 
 const pillars = [
   {
@@ -22,7 +23,8 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-24 relative">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 relative">
+          <DimensionLabel className="mb-4 justify-center">Section 01</DimensionLabel>
           <span className="text-xs font-mono uppercase tracking-widest text-primary mb-3 block">What We Do</span>
           <h2 className="text-3xl md:text-4xl font-mono font-bold text-foreground mb-4">
             Driving Automotive Standards Forward
@@ -32,12 +34,19 @@ const AboutSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6 relative">
+          {/* Crosshair nodes at grid intersection points */}
+          <CrosshairNode className="-top-3 -left-3" />
+          <CrosshairNode className="-top-3 -right-3" />
+          <CrosshairNode className="-bottom-3 -left-3" />
+          <CrosshairNode className="-bottom-3 -right-3" />
+
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
-              className="group p-6 rounded-xl border border-border bg-card hover:border-primary/30 hover:bg-primary/[0.02] transition-all duration-300"
+              className="group relative p-6 rounded-xl border border-border bg-card hover:border-primary/30 hover:bg-primary/[0.02] transition-all duration-300"
             >
+              <BlueprintCorners />
               <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:shadow-[var(--glow-primary)] transition-shadow duration-300">
                 <pillar.icon className="w-5 h-5 text-primary" />
               </div>
@@ -46,6 +55,8 @@ const AboutSection = () => {
             </div>
           ))}
         </div>
+
+        <BlueprintDivider className="mt-16" />
       </div>
     </section>
   );

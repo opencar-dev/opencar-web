@@ -1,4 +1,5 @@
 import { ExternalLink, GitBranch, FileCode } from "lucide-react";
+import { BlueprintCorners, DimensionLabel, CrosshairNode } from "./BlueprintElements";
 
 const standards = [
   {
@@ -17,6 +18,7 @@ const StandardsSection = () => {
       <div className="absolute inset-0 scanline pointer-events-none" />
       <div className="relative z-10 container mx-auto px-6">
         <div className="text-center mb-16">
+          <DimensionLabel className="mb-4 justify-center">Section 02</DimensionLabel>
           <span className="text-xs font-mono uppercase tracking-widest text-primary mb-3 block">Our Standards</span>
           <h2 className="text-3xl md:text-4xl font-mono font-bold text-foreground mb-4">
             Open Specifications
@@ -32,6 +34,11 @@ const StandardsSection = () => {
               key={standard.name}
               className="relative p-6 rounded-xl border border-border bg-card border-glow"
             >
+              <BlueprintCorners />
+              {/* Crosshair accent nodes */}
+              <CrosshairNode className="-top-1 left-1/2 -translate-x-1/2" />
+              <CrosshairNode className="-bottom-1 left-1/2 -translate-x-1/2" />
+
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">

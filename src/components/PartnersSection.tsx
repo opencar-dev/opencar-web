@@ -1,4 +1,5 @@
 import { ExternalLink } from "lucide-react";
+import { BlueprintCorners, DimensionLabel, BlueprintDivider } from "./BlueprintElements";
 
 const partners = [
   {
@@ -17,7 +18,9 @@ const PartnersSection = () => {
   return (
     <section id="partners" className="py-24 relative">
       <div className="container mx-auto px-6">
+        <BlueprintDivider className="mb-16" />
         <div className="text-center mb-16">
+          <DimensionLabel className="mb-4 justify-center">Section 03</DimensionLabel>
           <span className="text-xs font-mono uppercase tracking-widest text-primary mb-3 block">Ecosystem</span>
           <h2 className="text-3xl md:text-4xl font-mono font-bold text-foreground mb-4">
             Partner Applications
@@ -34,8 +37,9 @@ const PartnersSection = () => {
               href={partner.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-6 rounded-xl border border-border bg-card hover:border-primary/30 transition-all duration-300 flex flex-col"
+              className="group relative p-6 rounded-xl border border-border bg-card hover:border-primary/30 transition-all duration-300 flex flex-col"
             >
+              <BlueprintCorners />
               <div className="flex items-center justify-between mb-3">
                 <h3 className="text-lg font-mono font-bold text-foreground group-hover:text-primary transition-colors">
                   {partner.name}
