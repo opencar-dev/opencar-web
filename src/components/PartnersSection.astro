@@ -15,6 +15,11 @@ const partners = [
     url: "https://fuelempire.app",
     description: "An automotive community network dedicated to connecting car enthusiasts for sharing experiences, resources, builds, and knowledge across all makes and models.",
   },
+  {
+    name: "ForgedRoad",
+    url: "https://forgedroad.com",
+    description: "A platform for the automotive community to discover and share road experiences, routes, and driving adventures.",
+  },
 ];
 ---
 
@@ -32,7 +37,7 @@ const partners = [
       </p>
     </div>
 
-    <div class="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
       {partners.map((partner) => (
         <a
           href={partner.url}
